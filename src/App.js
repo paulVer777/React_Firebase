@@ -23,7 +23,7 @@ set=(event,value)=>{
 
             dane:value
 
-        },this.saveToDatabase)
+        })
 };
 
 
@@ -34,7 +34,7 @@ set=(event,value)=>{
         fetch('https://isa-sandbox-88427.firebaseio.com/Stan/.json',
 
             {
-               method:'PUT',
+               method:'POST',
                 body:JSON.stringify(this.state.dane)
 
             }
@@ -46,7 +46,11 @@ set=(event,value)=>{
 
 
                 <TextField onChange={this.set}/>
+                <RaisedButton
 
+                    onClick={()=>this.saveToDatabase()}
+                    label={"Klik"}
+                    primary={true}/>
 
             </div>
         );
